@@ -47,7 +47,7 @@ export default function Header() {
   ]
 
   // Descargar CV según el idioma
-  const handleDownloadCV = () => {
+  /* const handleDownloadCV = () => {
     const cvUrl = language === "es" ? "/CV_espanol.pdf" : "/CV_ingles.pdf"
     const link = document.createElement("a")
     link.href = cvUrl
@@ -55,7 +55,7 @@ export default function Header() {
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
-  }
+  } */
   
   return (
     <header
@@ -130,13 +130,15 @@ export default function Header() {
             )}
 
             {/* Botón para descargar CV */}   
-            <Button
-                
-                onClick={handleDownloadCV}
-                className="hidden md:inline-flex bg-primary hover:bg-primary/90"
-              >
-                 {t.hero.downloadCV}
-              </Button>
+            <a
+  href={language === "es" ? "/CV_espanol.pdf" : "/CV_ingles.pdf"}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="hidden md:inline-flex items-center bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-md shadow-md transition-all"
+>
+  {t.hero.downloadCV}
+</a>
+
 
             {/* Menú móvil */}
             <button

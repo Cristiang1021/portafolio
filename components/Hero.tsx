@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
+//import { Button } from "@/components/ui/button"
 import { Download, ArrowDown, Github, Linkedin, Mail, Code, Database, Server } from "lucide-react"
 import Image from "next/image"
 import { useLanguage } from "@/context/language-context"
@@ -25,7 +25,7 @@ export default function Hero() {
   }, [])
 
   // Descargar CV según el idioma
-  const handleDownloadCV = () => {
+  /* const handleDownloadCV = () => {
     const cvUrl = language === "es" ? "/CV_espanol.pdf" : "/CV_ingles.pdf"
     const link = document.createElement("a")
     link.href = cvUrl
@@ -33,7 +33,7 @@ export default function Hero() {
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
-  }
+  } */
 
   return (
     <section className="pt-32 pb-16 md:pt-40 md:pb-20 bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800 relative overflow-hidden">
@@ -66,12 +66,16 @@ export default function Hero() {
             <p className="text-gray-600 dark:text-gray-300 mb-8 text-lg">{t.hero.description}</p>
 
             <div className="flex flex-wrap gap-4 mb-8">
-              <Button
-                onClick={handleDownloadCV}
-                className="bg-primary hover:bg-primary/90 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
-              >
-                <Download className="mr-2 h-4 w-4" /> {t.hero.downloadCV}
-              </Button>
+            <a
+  href={language === "es" ? "/CV_espanol.pdf" : "/CV_ingles.pdf"}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex items-center bg-primary hover:bg-primary/90 shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 text-white px-4 py-2 rounded-md text-sm font-medium"
+>
+  <Download className="mr-2 h-4 w-4" /> {t.hero.downloadCV}
+</a>
+
+
 
 {/*               <Button
                 variant="outline"

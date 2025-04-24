@@ -105,8 +105,13 @@ export default function About() {
           },
           {
             name: "Inglés",
-            level: "B2 (PET, Cambridge)",
+            level: "B2 (IELTS)",
             percentage: 70,
+          },
+          {
+            name: "Francés",
+            level: "B1 (DELF)",
+            percentage: 60,
           },
         ],
       },
@@ -187,7 +192,12 @@ export default function About() {
           },
           {
             name: "English",
-            level: "B2 (PET, Cambridge)",
+            level: "B2 (IELTS)",
+            percentage: 70,
+          },
+          {
+            name: "French",
+            level: "B1 (DELF)",
             percentage: 70,
           },
         ],
